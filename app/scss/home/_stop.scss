@@ -72,12 +72,5 @@
   &__link {
     margin-top: auto;
     align-self: flex-start;
-    background-color: $white;
-    color: $black_title;
-
-    &:hover {
-      background-color: $accent;
-      color: $white;
-    }
   }
 }

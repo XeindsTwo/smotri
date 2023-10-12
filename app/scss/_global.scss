@@ -110,6 +110,15 @@ html {
       border-color: $accent;
     }
   }
+
+  &--black {
+    background-color: $white;
+    color: $black_title;
+
+    &:hover {
+      border-color: $black_text;
+    }
+  }
 }
 
 ::-webkit-scrollbar {
@@ -120,6 +129,11 @@ html {
   background-color: rgba($accent, 0.2);
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb,
+::selection {
   background-color: $accent;
+}
+
+::selection {
+  color: $white;
 }

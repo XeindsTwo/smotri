@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
     const menuBtn = document.getElementById('menuBtn');
     const headerInner = document.querySelector('.header__inner');
     const body = document.body;
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         menuLink.addEventListener("click", handleAnchorClick);
         menuLink.addEventListener("touchstart", handleAnchorClick);
     });
-});
+});*/
 
 const buttons = document.querySelectorAll('.tariff__buttons button');
 const price = document.querySelector('.tariff__price .tariff__value');
@@ -70,4 +70,16 @@ buttons.forEach(button => {
         const tariff = button.getAttribute('data-tariff');
         price.textContent = tariff === 'month' ? '1500₽/мес.' : tariff === 'week' ? '800₽/неделя' : '5000₽/навсегда';
     });
+});
+
+window.addEventListener('scroll', function () {
+    const tariffSection = document.getElementById('tariff');
+    const footer = document.getElementById('footer');
+    const scrollY = window.scrollY;
+    const tariffSectionHeight = tariffSection.clientHeight;
+    const triggerDistance = 100;
+
+    const distanceToFooter = tariffSectionHeight - scrollY;
+    const visibleDistance = Math.max(0, distanceToFooter - triggerDistance);
+    footer.style.bottom = `-${visibleDistance}px`;
 });
