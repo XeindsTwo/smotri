@@ -1,0 +1,125 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.body {
+  font-family: $inter;
+  font-weight: $fw-400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $black_text;
+  background-color: $white;
+  position: relative;
+  overflow-x: hidden;
+
+  @include r($tablet) {
+    font-size: 16px;
+  }
+
+  @include r($phone) {
+    font-size: 14px;
+  }
+
+  &--active {
+    overflow: hidden;
+  }
+}
+
+.container {
+  max-width: 1420px;
+  padding: 0 15px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.indent {
+  margin-top: 120px;
+}
+
+.logo {
+  transition: opacity .3s, outline .3s;
+  border-radius: 3px;
+
+  &:hover {
+    opacity: .5;
+  }
+
+  &:focus {
+    outline: 2px solid $accent;
+  }
+
+  &__img {
+    @include objectCoverBg;
+  }
+}
+
+.title,
+.section-title {
+  font-family: $rfDevi;
+  font-weight: 700;
+  line-height: 1;
+
+  &__decor {
+    @include objectCoverBg;
+    display: inline-block;
+    vertical-align: middle;
+    width: 55px;
+    height: 55px;
+  }
+}
+
+.title {
+  font-size: 56px;
+}
+
+.section-title {
+  font-size: 48px;
+  color: $black_title;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1;
+  padding: 12px 32px;
+  font-weight: 500;
+  background-color: rgba($white, .08);
+  border: 2px solid transparent;
+  border-radius: 25px;
+  transition: color .3s, opacity .3s, background-color .3s, border .3s;
+
+  &:hover {
+    background-color: transparent;
+    border-color: $white;
+  }
+
+  &:focus {
+    opacity: .5;
+  }
+
+  &--big {
+    padding: 20px 32px;
+  }
+
+  &--fiol {
+    background-color: $accent;
+    color: $white;
+
+    &:hover {
+      border-color: $accent;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba($accent, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $accent;
+}

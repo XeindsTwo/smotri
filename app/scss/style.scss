@@ -1,0 +1,16 @@
+@import 'reset';
+@import 'fonts';
+@import 'vars';
+@import 'mixin';
+@import 'libs';
+@import 'global';
+
+// Components
+@import 'components/header';
+@import 'components/footer';
+
+//Home
+@import 'home/stop';
+@import 'home/mechanism';
+
+@import 'home/tariff';
