@@ -14,7 +14,7 @@
 
 <body class="body">
 
-<header class="header">
+<header class="header" id="start">
     <div class="container">
         <div class="header__wrapper" style="background-image: url('images/start-bg.webp')">
             <nav class="header__top">
@@ -111,6 +111,9 @@
                 <a class="stop__link btn btn--black btn--big" href="">Опробовать</a>
             </li>
         </ul>
+        <p class="stop__subtext--mobile">
+            В смотримобиле есть куча других функций, которые помогут вам уйти от рук мошенников
+        </p>
     </div>
 </section>
     <section class="mechanism indent" id="mechanism">
@@ -182,9 +185,11 @@
     <div class="container">
         <div class="tariff__inner">
             <div class="tariff__left">
-                <h2 class="section-title">Тарифы</h2>
+                <h2 class="tariff__title section-title">Тарифы</h2>
                 <div class="tariff__buttons">
-                    <button class="tariff__btn tariff__btn--active" data-tariff="month" tabindex="-1" type="button">Месяц</button>
+                    <button class="tariff__btn tariff__btn--active" data-tariff="month" tabindex="-1" type="button">
+                        Месяц
+                    </button>
                     <button class="tariff__btn" data-tariff="week" type="button">Неделя</button>
                     <button class="tariff__btn" data-tariff="forever" type="button">Навсегда</button>
                 </div>
@@ -272,6 +277,9 @@
                     </div>
                 </li>
             </ul>
+            <p class="tariff__text--mobile">
+                В смотримобиле есть куча других функций, которые помогут вам уйти от рук мошенников
+            </p>
         </div>
     </div>
 </section>
@@ -312,7 +320,7 @@
                                 <a class="footer__link" href="#history">Истории</a>
                             </li>
                         </ul>
-                        <a class="footer__btn btn" href="">Вверх</a>
+                        <a class="footer__btn btn" href="#start">Вверх</a>
                     </div>
                 </nav>
                 <div class="footer__author">

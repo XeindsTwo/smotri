@@ -1,4 +1,4 @@
-/*document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const menuBtn = document.getElementById('menuBtn');
     const headerInner = document.querySelector('.header__inner');
     const body = document.body;
@@ -53,7 +53,7 @@
         menuLink.addEventListener("click", handleAnchorClick);
         menuLink.addEventListener("touchstart", handleAnchorClick);
     });
-});*/
+});
 
 const buttons = document.querySelectorAll('.tariff__buttons button');
 const price = document.querySelector('.tariff__price .tariff__value');
@@ -61,25 +61,32 @@ let activeButton = document.querySelector('.tariff__buttons .tariff__btn--active
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-        activeButton.classList.remove('tariff__btn--active');
-        activeButton.removeAttribute('tabindex');
+        if (activeButton) {
+            activeButton.classList.remove('tariff__btn--active');
+            activeButton.removeAttribute('tabindex');
+        }
 
         button.classList.add('tariff__btn--active');
         button.setAttribute('tabindex', '-1');
+        button.blur();
         activeButton = button;
         const tariff = button.getAttribute('data-tariff');
         price.textContent = tariff === 'month' ? '1500₽/мес.' : tariff === 'week' ? '800₽/неделя' : '5000₽/навсегда';
     });
 });
 
-window.addEventListener('scroll', function () {
-    const tariffSection = document.getElementById('tariff');
-    const footer = document.getElementById('footer');
-    const scrollY = window.scrollY;
-    const tariffSectionHeight = tariffSection.clientHeight;
-    const triggerDistance = 100;
+/*
+const tariffSection = document.getElementById('tariff');
+const footer = document.getElementById('footer');
+const triggerDistance = tariffSection.offsetTop + tariffSection.clientHeight;
+const footerHeight = footer.clientHeight;
+const transitionDuration = 0.6; // длительность анимации в секундах
 
-    const distanceToFooter = tariffSectionHeight - scrollY;
-    const visibleDistance = Math.max(0, distanceToFooter - triggerDistance);
+window.addEventListener('scroll', function () {
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const visibleDistance = Math.max(0, triggerDistance - scrollY - windowHeight + footerHeight);
+
+    footer.style.transition = `bottom ${transitionDuration}s ease-in-out`;
     footer.style.bottom = `-${visibleDistance}px`;
-});
+});*/

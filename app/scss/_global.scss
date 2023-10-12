@@ -16,10 +16,6 @@ html {
     font-size: 16px;
   }
 
-  @include r($phone) {
-    font-size: 14px;
-  }
-
   &--active {
     overflow: hidden;
   }
@@ -34,6 +30,12 @@ html {
 
 .indent {
   margin-top: 120px;
+  @include r($lg) {
+    margin-top: 100px;
+  }
+  @include r($sm) {
+    margin-top: 80px;
+  }
 }
 
 .logo {
@@ -76,6 +78,20 @@ html {
   font-size: 48px;
   color: $black_title;
   margin-bottom: 25px;
+  @include r($desktop) {
+    font-size: 44px;
+  }
+  @include r($lg) {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  @include r($tablet) {
+    margin-bottom: 15px;
+    font-size: 36px;
+  }
+  @include r($sm) {
+    font-size: 32px;
+  }
 }
 
 .btn {

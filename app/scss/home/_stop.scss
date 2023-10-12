@@ -5,6 +5,12 @@
     display: flex;
     justify-content: space-between;
     gap: 50px;
+    @include r($lg) {
+      margin-bottom: 40px;
+    }
+    @include r($sm) {
+      padding: 0;
+    }
   }
 
   &__top-left {
@@ -20,11 +26,41 @@
     color: $black_text;
     margin-top: auto;
     max-width: 375px;
+    @include r($lg) {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+      max-width: 380px;
+      padding-top: 16px;
+      border-top: 2px solid #D8D8D8;
+      @include r($lg) {
+        display: block;
+        margin-left: 25px;
+      }
+      @include r($sm) {
+        margin-left: 0;
+      }
+      @include r($phone) {
+        font-size: 14px;
+      }
+    }
   }
 
   &__list {
     display: flex;
     gap: 15px;
+    @include r($lg) {
+      margin-bottom: 40px;
+    }
+    @media (max-width: 700px) {
+      overflow-x: scroll;
+      gap: 8px;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 
   &__item {
@@ -39,6 +75,14 @@
     min-height: 440px;
     max-width: 495px;
     width: 100%;
+    @include r($tablet) {
+      min-height: 400px;
+      padding: 20px;
+      background-image: url("../images/stop/decor-one-mobile.webp") !important;
+    }
+    @media (max-width: 700px) {
+      min-width: 320px;
+    }
 
     .stop__text {
       max-width: 250px;
@@ -47,6 +91,19 @@
     &--long {
       max-width: 100%;
       width: 100%;
+      @media (max-width: 1300px) {
+        background-position: bottom 0 right -20px;
+      }
+      @include r($desktop) {
+        background-position: bottom -20px right -130px;
+      }
+      @media (max-width: 1100px) {
+        background-position: bottom -85px right -190px;
+      }
+      @include r($tablet) {
+        background-image: url("../images/stop/decor-two-mobile.webp") !important;
+        background-position: bottom 0 right 0;
+      }
 
       .stop__text {
         max-width: 330px;
@@ -58,9 +115,15 @@
     font-family: $rfDevi;
     font-size: 28px;
     font-weight: 600;
-    line-height: 1.1;
+    line-height: 1.2;
     margin-bottom: 15px;
     color: #191919;
+    @include r($desktop) {
+      font-size: 26px;
+    }
+    @include r($lg) {
+      font-size: 24px;
+    }
 
     span {
       background-color: rgba($accent, .1);
