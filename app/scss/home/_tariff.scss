@@ -52,10 +52,6 @@
     border-radius: 24px;
     transition: color .3s, background-color .3s, opacity .3s, box-shadow .3s, opacity .3s;
 
-    &:hover {
-      color: $accent;
-    }
-
     &:focus {
       opacity: .5;
     }
@@ -198,9 +194,6 @@
     background-color: $white;
     @include r($lg) {
       margin-bottom: 32px;
-    }
-    @include r($sm) {
-      padding: 16px 24px;
     }
 
     &--premium {

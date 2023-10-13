@@ -91,17 +91,29 @@
 }
 
 .menu-btn {
-  height: 30px;
-  width: 40px;
+  height: 48px;
+  width: 48px;
   cursor: pointer;
   z-index: 1000;
   display: none;
   position: absolute;
-  left: 25px;
-  top: 31px;
+  border-radius: 50%;
+  border: 1px solid #3E3E3E;
+  padding: 18px 16px;
+  transition: border .3s, opacity .3s;
+
+  &:hover {
+    border-color: $accent;
+  }
+
+  &:focus {
+    opacity: .5;
+  }
 
   @media(max-width: 800px) {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__line,
@@ -109,22 +121,28 @@
   &__line::before {
     background-color: #fff;
     content: '';
-    position: absolute;
     left: 0;
     top: 0;
-    width: 40px;
-    height: 3px;
-    margin-top: 13px;
+    width: 15px;
+    height: 2px;
     transition: .3s ease-in-out .3s;
   }
 
+  &__line::after,
+  &__line::before {
+    position: absolute;
+  }
+
   &__line {
+    position: relative;
+    display: flex;
+
     &::before {
-      margin-top: -12px;
+      margin-top: -6px;
     }
 
     &::after {
-      margin-top: 12px;
+      margin-top: 6px;
     }
   }
 

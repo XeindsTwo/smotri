@@ -116,6 +116,9 @@ html {
 
   &--big {
     padding: 20px 32px;
+    @include r($phone) {
+      padding: 16px 24px;
+    }
   }
 
   &--fiol {
