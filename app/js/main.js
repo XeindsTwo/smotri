@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
     const menuBtn = document.getElementById('menuBtn');
     const headerInner = document.querySelector('.header__inner');
     const body = document.body;
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         menuLink.addEventListener("click", handleAnchorClick);
         menuLink.addEventListener("touchstart", handleAnchorClick);
     });
-});
+});*/
 
 const buttons = document.querySelectorAll('.tariff__buttons button');
 const price = document.querySelector('.tariff__price .tariff__value');
@@ -92,6 +92,49 @@ btnFooter.addEventListener('click', () => {
         menuFooter.style.opacity = '0';
     }
 });
+
+const mechanismItems = document.getElementById("mechanismItems");
+let animationActive = false;
+
+function initAnimation() {
+    const items = document.querySelectorAll(".mechanism__item");
+    items.forEach((item) => {
+        const clonedItem = item.cloneNode(true);
+        mechanismItems.appendChild(clonedItem);
+    });
+
+    let scrollAmount = 0;
+
+    function scrollItems() {
+        scrollAmount += 1;
+        mechanismItems.style.transform = `translateX(-${scrollAmount}px)`;
+        if (scrollAmount >= mechanismItems.offsetWidth / 2) {
+            scrollAmount = 0;
+            mechanismItems.style.transform = "translateX(0)";
+        }
+    }
+
+    animationActive = true;
+    setInterval(scrollItems, 10);
+}
+
+function stopAnimation() {
+    while (mechanismItems.firstChild) {
+        mechanismItems.removeChild(mechanismItems.firstChild);
+    }
+    animationActive = false;
+}
+
+function handleResize() {
+    if (window.innerWidth < 1260 && !animationActive) {
+        initAnimation();
+    } else if (window.innerWidth >= 1260 && animationActive) {
+        stopAnimation();
+    }
+}
+
+handleResize();
+window.addEventListener("resize", handleResize);
 
 /*
 const tariffSection = document.getElementById('tariff');
