@@ -3,6 +3,7 @@
 
   &__wrapper {
     @include bg;
+    background-position: revert;
     display: flex;
     flex-direction: column;
     min-height: 720px;
@@ -22,12 +23,26 @@
 
   &__top {
     padding-top: 32px;
-    gap: 40px;
+
+    &-logo {
+      max-width: 495px;
+      width: 100%;
+      display: flex;
+    }
   }
 
   &__top-right {
-    margin-left: auto;
     display: flex;
+    gap: 30px;
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 12px;
+    @media (max-width: 1420px) {
+      margin-left: 0;
+    }
+    @media (max-width: 1290px) {
+      display: none;
+    }
   }
 
   &__list {
@@ -35,7 +50,6 @@
     font-size: 14px;
     gap: 25px;
     line-height: 1;
-    margin-right: 210px;
   }
 
   &__link {
@@ -53,17 +67,20 @@
   &__content {
     margin-top: auto;
     margin-bottom: 40px;
-    margin-right: 190px;
+    margin-right: 180px;
     display: flex;
-    gap: 50px;
     justify-content: space-between;
 
-    &-info {
+    &-text {
       margin-top: auto;
-      color: $gray;
-      font-size: 14px;
-      max-width: 230px;
+      max-width: 495px;
       width: 100%;
+
+      p {
+        color: $gray;
+        font-size: 14px;
+        max-width: 245px;
+      }
     }
   }
 
@@ -87,82 +104,5 @@
   &__actions {
     display: flex;
     gap: 15px;
-  }
-}
-
-.menu-btn {
-  height: 48px;
-  width: 48px;
-  cursor: pointer;
-  z-index: 1000;
-  display: none;
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid #3E3E3E;
-  padding: 18px 16px;
-  transition: border .3s, opacity .3s;
-
-  &:hover {
-    border-color: $accent;
-  }
-
-  &:focus {
-    opacity: .5;
-  }
-
-  @media(max-width: 800px) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &__line,
-  &__line::after,
-  &__line::before {
-    background-color: #fff;
-    content: '';
-    left: 0;
-    top: 0;
-    width: 15px;
-    height: 2px;
-    transition: .3s ease-in-out .3s;
-  }
-
-  &__line::after,
-  &__line::before {
-    position: absolute;
-  }
-
-  &__line {
-    position: relative;
-    display: flex;
-
-    &::before {
-      margin-top: -6px;
-    }
-
-    &::after {
-      margin-top: 6px;
-    }
-  }
-
-  &.active {
-    .menu-btn__line {
-      background: transparent;
-      transition: .5s ease-in-out;
-      transform: rotate(-90deg);
-
-      &::before {
-        margin-top: 0;
-        transform: rotate(-45deg);
-        transition-delay: .5s;
-      }
-
-      &::after {
-        margin-top: 0;
-        transform: rotate(45deg);
-        transition-delay: .5s;
-      }
-    }
   }
 }

@@ -72,6 +72,12 @@ html {
 
 .title {
   font-size: 56px;
+  @media (max-width: 1400px) {
+    font-size: 48px;
+  }
+  @media (max-width: 1300px) {
+    font-size: 44px;
+  }
 }
 
 .section-title {
@@ -138,10 +144,6 @@ html {
       border-color: $black_text;
     }
   }
-}
-
-.mobile-text {
-
 }
 
 ::-webkit-scrollbar {
