@@ -1,0 +1,31 @@
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 4px;
+
+  &__item {
+    position: relative;
+    padding-left: 30px;
+
+    &::before {
+      @include top50;
+      @include pseudo;
+      @include bg;
+      width: 14px;
+      height: 14px;
+      left: 0;
+      background-image: url("../images/icons/cross.svg");
+    }
+
+    &.true {
+      font-weight: 500;
+
+      &::before {
+        width: 16px;
+        height: 12px;
+        background-image: url("../images/icons/galka.svg");
+      }
+    }
+  }
+}

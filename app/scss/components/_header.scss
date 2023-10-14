@@ -1,5 +1,15 @@
 .header {
   color: $white;
+  @include r($tablet) {
+    @include bg;
+    background-position: left;
+    background-image: url("../images/start-bg.webp");
+    border-radius: 0 0 32px 32px;
+  }
+  @include r($phone) {
+    background-image: url("../images/start-bg-mobile.webp");
+    border-radius: 0 0 16px 16px;
+  }
 
   &__wrapper {
     @include bg;
@@ -8,11 +18,23 @@
     flex-direction: column;
     min-height: 720px;
     border-radius: 0 0 32px 32px;
+    @include r($lg) {
+      min-height: 840px;
+    }
+    @include r($tablet) {
+      background-image: none !important;
+    }
+    @include r($sm) {
+      min-height: 720px;
+    }
   }
 
   &__top,
   &__content {
     margin: 0 32px;
+    @media (max-width: 610px) {
+      margin: 0;
+    }
   }
 
   &__top,
@@ -23,6 +45,9 @@
 
   &__top {
     padding-top: 32px;
+    @include r($phone) {
+      padding-top: 16px;
+    }
 
     &-logo {
       max-width: 495px;
@@ -43,6 +68,28 @@
     @media (max-width: 1290px) {
       display: none;
     }
+    @include r($desktop) {
+      flex-direction: column-reverse;
+      position: absolute;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100vh;
+      background-color: #1f1f1f;
+      margin: 0;
+      padding: 140px 32px 0;
+      gap: 60px;
+      transition: all .4s;
+      &.active {
+        left: 0;
+      }
+    }
+    @media (max-width: 610px) {
+      padding: 120px 15px 0;
+    }
   }
 
   &__list {
@@ -50,6 +97,11 @@
     font-size: 14px;
     gap: 25px;
     line-height: 1;
+    @include r($desktop) {
+      flex-direction: column;
+      font-size: 18px;
+      gap: 50px;
+    }
   }
 
   &__link {
@@ -70,11 +122,25 @@
     margin-right: 180px;
     display: flex;
     justify-content: space-between;
+    @media (max-width: 1300px) {
+      margin-right: 55px;
+    }
+    @include r($lg) {
+      flex-direction: column;
+      margin-right: 0;
+      gap: 40px;
+    }
+    @include r($sm) {
+      margin-bottom: 24px;
+    }
 
     &-text {
       margin-top: auto;
       max-width: 495px;
       width: 100%;
+      @include r($desktop) {
+        max-width: 350px;
+      }
 
       p {
         color: $gray;
@@ -87,10 +153,20 @@
   &__right {
     max-width: 670px;
     width: 100%;
+    @include r($desktop) {
+      max-width: 510px;
+      margin-left: auto;
+    }
+    @include r($lg) {
+      margin-left: 0;
+    }
   }
 
   &__title {
     margin-bottom: 25px;
+    @include r($lg) {
+      margin-bottom: 20px;
+    }
   }
 
   &__text {
@@ -99,10 +175,25 @@
     font-size: 18px;
     margin-bottom: 50px;
     line-height: 1.6;
+    @include r($lg) {
+      margin-bottom: 40px;
+    }
+    @include r($phone) {
+      line-height: 1.55;
+    }
+
+    @media (max-width: 373px) {
+      font-size: 16px;
+    }
   }
 
   &__actions {
     display: flex;
     gap: 15px;
+    @media (max-width: 373px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
   }
 }

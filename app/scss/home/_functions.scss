@@ -1,0 +1,129 @@
+.functions {
+  &__top {
+    display: flex;
+    margin-bottom: 48px;
+    @media (max-width: 1100px) {
+      margin-bottom: 40px;
+    }
+
+    .block {
+      max-width: 535px;
+      width: 100%;
+      @media (max-width: 1100px) {
+        display: none;
+      }
+    }
+  }
+
+  &__top-right {
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 1100px) {
+      padding-left: 25px;
+    }
+    @media (max-width: 610px) {
+      padding-left: 0;
+    }
+  }
+
+  &__inner {
+    @include r($tablet) {
+      @include bg;
+      background-image: url('../images/functions-bg.webp');
+      border-radius: 16px;
+    }
+  }
+
+  &__wrapper,
+  &__subtitle {
+    color: $white;
+  }
+
+  &__wrapper {
+    overflow: hidden;
+    position: relative;
+    @include bg;
+    min-height: 572px;
+    background-color: #191919;
+    border-radius: 32px;
+    display: flex;
+    gap: 50px;
+    @media (max-width: 960px) {
+      flex-direction: column;
+    }
+    @include r($tablet) {
+      background-image: none !important;
+      gap: 80px;
+    }
+  }
+
+  &__content {
+    padding: 24px 0 24px 24px;
+    display: flex;
+    flex-direction: column;
+    max-width: 505px;
+    width: 100%;
+    @media (max-width: 610px) {
+      padding: 24px 0 0;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    color: #DBD9DF;
+    @include r($phone) {
+      margin-bottom: 32px;
+    }
+  }
+
+  .benefits-list {
+    padding-left: 0;
+  }
+
+  &__actions {
+    margin-top: auto;
+    display: flex;
+    gap: 15px;
+    @media (max-width: 960px) {
+      position: absolute;
+      bottom: 24px;
+    }
+
+    &-btn {
+      backdrop-filter: blur(80px);
+    }
+  }
+
+  &__img {
+    @include objectCoverBg;
+    position: absolute;
+    right: 75px;
+    bottom: 0;
+    @media (max-width: 1300px) {
+      width: 480px;
+      height: auto;
+    }
+    @include r($desktop) {
+      width: 415px;
+      right: 50px;
+    }
+    @media (max-width: 1100px) {
+      width: 380px;
+    }
+    @media (max-width: 960px) {
+      position: static;
+      padding-left: 25px;
+      width: 450px;
+    }
+    @include r($tablet) {
+      width: 410px;
+    }
+    @media (max-width: 610px) {
+      padding-left: 0;
+      width: 380px;
+    }
+    @include r($phone) {
+      width: auto;
+    }
+  }
+}

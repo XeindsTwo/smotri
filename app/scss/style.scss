@@ -9,9 +9,11 @@
 @import 'components/header';
 @import 'components/footer';
 @import 'components/menu-btn';
+@import 'components/buttons-tabs';
+@import 'components/benefits-items';
 
 //Home
 @import 'home/stop';
 @import 'home/mechanism';
-
+@import 'home/functions';
 @import 'home/tariff';

@@ -57,12 +57,12 @@
                     <h1 class="header__title title">
                     <span>
                         Проверь
-                       <img class="title__decor" src="images/icons/1.webp" alt="Эмодзи">
+                       <img class="title__decor" src="images/icons/1.webp" alt="автомобиль">
                     </span>
                         <br>автомобиль <br>
                         <span>
                         не выходя из дома
-                        <img class="title__decor" src="images/icons/2.webp" alt="Эмодзи">
+                        <img class="title__decor" src="images/icons/2.webp" alt="дом">
                     </span>
                     </h1>
                     <p class="header__text">
@@ -72,7 +72,7 @@
                         <a class="header__actions-btn btn btn--big btn--fiol" href="#tariff">
                             Ознакомится с ценой
                         </a>
-                        <a class="header__actions-btn btn btn--big" href="#cases">
+                        <a class="header__actions-btn btn btn--big" id="btn-cases" href="#cases">
                             Успешные кейсы
                         </a>
                     </div>
@@ -237,18 +237,73 @@
         </div>
     </div>
 </section>
-
+    <section class="functions indent" id="functions">
+    <div class="container">
+        <div class="functions__top">
+            <div class="block"></div>
+            <div class="functions__top-right">
+                <h2 class="section-title">Функции бота</h2>
+                <div class="functions__buttons buttons-tabs">
+                    <button class="functions__btn buttons-tabs__btn buttons-tabs__btn--active" tabindex="-1"
+                            type="button" data-target="cars">
+                        Автомобилей
+                    </button>
+                    <button class="functions__btn buttons-tabs__btn" type="button" data-target="people">Людей</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="functions__inner">
+        <div class="container">
+            <div class="functions__wrapper" style="background-image: url('images/functions-bg.webp')">
+                <div class="functions__content">
+                    <h3 class="functions__subtitle section-title">
+                        Найдем
+                        <span class="section-title__decor">
+                    <img src="images/icons/3.webp" alt="поиск">
+                </span>
+                        <br>
+                        всё что движется
+                    </h3>
+                    <p class="functions__text">
+                        Поможем выявить автомобили с серьезными повреждениями или восстановлениям после аварий
+                    </p>
+                    <ul class="benefits-list">
+                        <li class="benefits-list__item true">
+                            Расчет стоимости владения
+                        </li>
+                        <li class="benefits-list__item true">
+                            Премиальный дизайн
+                        </li>
+                        <li class="benefits-list__item true">
+                            Отзывы об автосалонах
+                        </li>
+                        <li class="benefits-list__item true">
+                            Вся история об автомобиле
+                        </li>
+                    </ul>
+                    <div class="functions__actions">
+                        <a class="btn btn--big btn--fiol" href="" target="_blank">Начать поиск</a>
+                        <a class="functions__actions-btn btn btn--big" id="btn-cases-two" href="#cases">Успешные
+                            кейсы</a>
+                    </div>
+                </div>
+                <img class="functions__img" src="images/functions-phone.webp" width="563" height="510" alt="телефоны">
+            </div>
+        </div>
+    </div>
+</section>
     <section class="tariff indent" id="tariff">
     <div class="container">
         <div class="tariff__inner">
             <div class="tariff__left">
                 <h2 class="tariff__title section-title">Тарифы</h2>
-                <div class="tariff__buttons">
-                    <button class="tariff__btn tariff__btn--active" data-tariff="month" tabindex="-1" type="button">
+                <div class="tariff__buttons buttons-tabs">
+                    <button class="tariff__btn buttons-tabs__btn buttons-tabs__btn--active" data-tariff="month" tabindex="-1" type="button">
                         Месяц
                     </button>
-                    <button class="tariff__btn" data-tariff="week" type="button">Неделя</button>
-                    <button class="tariff__btn" data-tariff="forever" type="button">Навсегда</button>
+                    <button class="tariff__btn buttons-tabs__btn" data-tariff="week" type="button">Неделя</button>
+                    <button class="tariff__btn buttons-tabs__btn" data-tariff="forever" type="button">Навсегда</button>
                 </div>
                 <p class="tariff__text">
                     В смотримобиле есть куча других функций, которые помогут вам уйти от рук мошенников
@@ -269,26 +324,26 @@
                     </div>
                     <div class="tariff__benefits">
                         <span class="tariff__benefits-text">Преимущества</span>
-                        <ul class="tariff__benefits-list">
-                            <li class="tariff__benefits-item tariff__benefits-item--true">
+                        <ul class="benefits-list">
+                            <li class="benefits-list__item true">
                                 Расчет стоимости владения
                             </li>
-                            <li class="tariff__benefits-item tariff__benefits-item--true">
+                            <li class="benefits-list__item true">
                                 Премиальный дизайн
                             </li>
-                            <li class="tariff__benefits-item tariff__benefits-item--true">
+                            <li class="benefits-list__item true">
                                 Отзывы об автосалонах
                             </li>
-                            <li class="tariff__benefits-item tariff__benefits-item--true">
+                            <li class="benefits-list__item true">
                                 Вся история об автомобиле
                             </li>
-                            <li class="tariff__benefits-item tariff__benefits-item--true">
+                            <li class="benefits-list__item true">
                                 Премиальный дизайн
                             </li>
-                            <li class="tariff__benefits-item tariff__benefits-item--true">
+                            <li class="benefits-list__item true">
                                 Еще один премиум пункт
                             </li>
-                            <li class="tariff__benefits-item tariff__benefits-item--true">
+                            <li class="benefits-list__item true">
                                 Вся история об автомобиле
                             </li>
                         </ul>
@@ -308,26 +363,26 @@
                     </div>
                     <div class="tariff__benefits">
                         <span class="tariff__benefits-text">Преимущества</span>
-                        <ul class="tariff__benefits-list">
-                            <li class="tariff__benefits-item tariff__benefits-item--true">
+                        <ul class="benefits-list">
+                            <li class="benefits-list__item true">
                                 Расчет стоимости владения
                             </li>
-                            <li class="tariff__benefits-item">
+                            <li class="benefits-list__item">
                                 Премиальный дизайн
                             </li>
-                            <li class="tariff__benefits-item">
+                            <li class="benefits-list__item">
                                 Отзывы об автосалонах
                             </li>
-                            <li class="tariff__benefits-item">
+                            <li class="benefits-list__item">
                                 Вся история об автомобиле
                             </li>
-                            <li class="tariff__benefits-item">
+                            <li class="benefits-list__item">
                                 Премиальный дизайн
                             </li>
-                            <li class="tariff__benefits-item">
+                            <li class="benefits-list__item">
                                 Еще один премиум пункт
                             </li>
-                            <li class="tariff__benefits-item">
+                            <li class="benefits-list__item">
                                 Вся история об автомобиле
                             </li>
                         </ul>
@@ -424,6 +479,4 @@
         </div>
     </div>
 </footer>
-<script src="js/main.min.js"></script>
-</body>
-</html>
+<script src="js/main.min.js" type="module"></script>
