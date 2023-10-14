@@ -1,0 +1,244 @@
+.cases {
+  &__top {
+    display: flex;
+    margin-bottom: 48px;
+    @media (max-width: 1100px) {
+      margin-bottom: 40px;
+      margin-left: 25px;
+    }
+    @media (max-width: 610px) {
+      margin-left: 0;
+    }
+
+    &-right {
+      max-width: 465px;
+      width: 100%;
+    }
+
+    &-text {
+      font-size: 18px;
+    }
+
+    .block {
+      max-width: 535px;
+      width: 100%;
+      @media (max-width: 1100px) {
+        display: none;
+      }
+    }
+  }
+
+  &__wrapper {
+    overflow-x: hidden;
+    @include r($tablet) {
+      background-color: #F5F5F5;
+      border-radius: 32px;
+    }
+  }
+
+  &__inner {
+    background-color: #F5F5F5;
+    border-radius: 32px;
+    align-items: center;
+    display: flex;
+    gap: 40px;
+    @media (max-width: 1430px) {
+      gap: 30px;
+    }
+    @media (max-width: 1100px) {
+      gap: 60px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    @include r($tablet) {
+      background-color: transparent;
+      border-radius: 0;
+    }
+    @include r($phone) {
+      gap: 70px;
+    }
+  }
+
+  &__content {
+    padding: 25px 0 25px 25px;
+    max-width: 420px;
+    width: 100%;
+
+    @media (max-width: 1430px) {
+      max-width: 505px;
+    }
+
+    @media (max-width: 1100px) {
+      padding: 25px 0 0 25px;
+      max-width: 800px;
+    }
+
+    @media (max-width: 610px) {
+      padding: 25px 0 0;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+    @media (max-width: 1100px) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__btn {
+    @include flex-center;
+    width: 40px;
+    height: 40px;
+    background-color: $white;
+    border-radius: 50%;
+    transition: background-color .4s, opacity .4s;
+
+    &:hover {
+      background-color: $accent;
+
+      .cases__path {
+        stroke: $white;
+      }
+    }
+
+    &:focus {
+      opacity: .5;
+    }
+  }
+
+  &__path {
+    transition: all .4s;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 28px;
+    font-family: $rfDevi;
+    margin-bottom: 15px;
+    line-height: 1.17;
+    @include r($lg) {
+      font-size: 26px;
+    }
+    @include r($tablet) {
+      font-size: 24px;
+    }
+    @include r($phone) {
+      line-height: 1.07;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    margin-bottom: 40px;
+    @media (max-width: 1100px) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 75px;
+    @media (max-width: 1100px) {
+      margin-bottom: 48px;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &-name,
+    &-account {
+      line-height: 1;
+    }
+
+    &-name {
+      color: #191919;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    &-account {
+      &.premium {
+        color: $accent;
+      }
+    }
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    @include objectCoverBg;
+  }
+
+  &__info {
+    display: flex;
+    gap: 32px;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    &-name {
+      font-size: 18px;
+      color: #000;
+      line-height: 1;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    margin: 50px 0 30px;
+    padding-right: 50px;
+    border-bottom: 2px solid #D9D9D9;
+    @media (max-width: 1100px) {
+      margin: 0 auto 32px;
+      padding: 0 25px;
+    }
+    @include r($tablet) {
+      border-bottom: none;
+      &::after {
+        @include pseudo;
+        bottom: 0;
+        left: -15px;
+        width: 120%;
+        height: 1.5px;
+        background-color: #D9D9D9;
+      }
+    }
+    @include r($sm) {
+      padding: 0 20px;
+    }
+
+    img {
+      margin-left: auto;
+      @include objectCoverBg;
+      border-radius: 24px 24px 0 0;
+      @media (max-width: 1100px) {
+        width: 100%;
+      }
+      @include r($lg) {
+        height: 380px;
+      }
+      @include r($tablet) {
+        height: 320px;
+      }
+      @include r($sm) {
+        height: 260px;
+      }
+      @include r($phone) {
+        height: 200px;
+      }
+      @media (max-width: 400px) {
+        height: 180px;
+      }
+    }
+  }
+}
