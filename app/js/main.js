@@ -26,18 +26,58 @@ const swiper = new Swiper('.swiper', {
     }
 });
 
-/*
-const tariffSection = document.getElementById('tariff');
-const footer = document.getElementById('footer');
-const triggerDistance = tariffSection.offsetTop + tariffSection.clientHeight;
-const footerHeight = footer.clientHeight;
-const transitionDuration = 0.6; // длительность анимации в секундах
+document.addEventListener('DOMContentLoaded', function () {
+    const historySection = document.getElementById('history');
+    const footer2 = document.getElementById('footer');
+    const footerBtn = document.querySelector('.menu-btn--footer');
+    const footerMenu = footer2.querySelector('.footer__nav-right--mobile');
+    const footerHeight = footer2.clientHeight;
+    const additionalTriggerOffset = 0.2 * window.innerHeight;
 
-window.addEventListener('scroll', function () {
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const visibleDistance = Math.max(0, triggerDistance - scrollY - windowHeight + footerHeight);
+    const triggerDistance = historySection.offsetTop + historySection.clientHeight + additionalTriggerOffset - window.innerHeight;
 
-    footer.style.transition = `bottom ${transitionDuration}s ease-in-out`;
-    footer.style.bottom = `-${visibleDistance}px`;
-});*/
+    footer2.style.bottom = `-${footerHeight}px`;
+
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    function updateFooterPosition() {
+        if (lastScrollY + window.innerHeight >= document.documentElement.scrollHeight) {
+            footer2.style.bottom = '0px';
+            ticking = false;
+            return;
+        }
+
+        let overlayEffect = lastScrollY - triggerDistance;
+
+        if (overlayEffect < 0) {
+            overlayEffect = 0;
+        } else if (overlayEffect > footerHeight) {
+            overlayEffect = footerHeight;
+        }
+
+        footer2.style.bottom = `-${footerHeight - overlayEffect}px`;
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+        const currentScrollY = window.scrollY;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        if (currentScrollY < lastScrollY && currentScrollY < maxScroll - 10) {
+            if (footerMenu && footerMenu.classList.contains('footer__nav-right--active')) {
+                footerMenu.classList.remove('footer__nav-right--active');
+                footerBtn.classList.remove('active');
+                footerMenu.style.height = '0';
+                footerMenu.style.opacity = '0';
+            }
+        }
+
+        lastScrollY = currentScrollY;
+
+        if (!ticking) {
+            window.requestAnimationFrame(updateFooterPosition);
+            ticking = true;
+        }
+    });
+});

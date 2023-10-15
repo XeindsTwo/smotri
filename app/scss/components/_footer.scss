@@ -1,8 +1,9 @@
 .footer {
-  /*  position: sticky;
-    bottom: 0;
-    z-index: 1;
-    transition: bottom 0.6s ease-in-out;*/
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  transition: bottom 1.3s ease-in-out;
+
   @include r($tablet) {
     @include bg;
     background-image: url("../images/footer-bg-mobile.webp");
