@@ -17,6 +17,15 @@ updateButtonText(buttonCases);
 updateButtonText(buttonCasesTwo);
 initFunctions();
 
+const swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    allowTouchMove: false,
+    navigation: {
+        prevEl: '.cases__btn--prev',
+        nextEl: '.cases__btn--next'
+    }
+});
+
 /*
 const tariffSection = document.getElementById('tariff');
 const footer = document.getElementById('footer');
