@@ -115,7 +115,6 @@
     font-family: $rfDevi;
     font-size: 28px;
     font-weight: 600;
-    line-height: 1.2;
     @include r($desktop) {
       font-size: 26px;
     }
@@ -126,6 +125,7 @@
 
   &__name {
     color: #191919;
+    line-height: 1.4;
     margin-bottom: 12px;
 
     span {
@@ -147,6 +147,7 @@
   }
 
   &__value {
+    line-height: 1.2;
     margin-bottom: 5px;
     transition: color 0.3s;
 

@@ -1,9 +1,4 @@
 .cases {
-  padding-bottom: 100px;
-  @include r($sm) {
-    padding-bottom: 80px;
-  }
-
   .swiper {
     border-radius: 32px;
   }

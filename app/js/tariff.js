@@ -16,7 +16,7 @@ export function initTariff() {
             button.blur();
             activeButton = button;
             const tariff = button.getAttribute('data-tariff');
-            price.textContent = tariff === 'month' ? '1500₽/мес.' : tariff === 'week' ? '800₽/неделя' : '5000₽/навсегда';
+            price.textContent = tariff === 'month' ? '1300₽/месяц' : tariff === 'week' ? '600₽/неделя' : '5850₽/полгода';
         });
     });
 }
