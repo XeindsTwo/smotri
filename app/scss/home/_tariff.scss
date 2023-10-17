@@ -1,4 +1,10 @@
 .tariff {
+  .container {
+    @media (max-width: 700px) {
+      padding-right: 0;
+    }
+  }
+
   &__inner {
     display: flex;
     gap: 30px;
@@ -26,6 +32,10 @@
     flex-direction: column;
     @include r($desktop) {
       max-width: 340px;
+    }
+    @media (max-width: 700px) {
+      margin-right: 15px;
+      max-width: 100%;
     }
     @include r($sm) {
       padding-left: 0;
@@ -55,6 +65,10 @@
         display: block;
         margin-left: 25px;
       }
+      @media (max-width: 700px) {
+        margin-right: 15px;
+        max-width: 395px;
+      }
       @include r($sm) {
         margin-left: 0;
       }
@@ -80,6 +94,7 @@
     }
     @media (max-width: 700px) {
       overflow-x: scroll;
+      padding-right: 15px;
       &::-webkit-scrollbar {
         display: none;
       }

@@ -57,6 +57,9 @@
       @include r($phone) {
         font-size: 14px;
       }
+      @media (max-width: 410px) {
+        margin-top: 180px;
+      }
     }
   }
 
@@ -66,9 +69,15 @@
 
     @media (max-width: 1260px) {
       position: absolute;
-      bottom: 166px;
+      bottom: 158px;
       left: -65px;
       margin-right: 0;
+    }
+    @include r($phone) {
+      bottom: 129px;
+    }
+    @media (max-width: 410px) {
+      bottom: 143px;
     }
   }
 

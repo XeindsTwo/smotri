@@ -20,6 +20,7 @@ initFunctions();
 const swiper = new Swiper('.swiper', {
     slidesPerView: 1,
     allowTouchMove: false,
+    autoHeight: true,
     navigation: {
         prevEl: '.cases__btn--prev',
         nextEl: '.cases__btn--next'
